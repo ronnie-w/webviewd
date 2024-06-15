@@ -4,7 +4,7 @@
 		"ronnie"
 	],
 	"copyright": "Copyright © 2024, ronnie",
-	"description": "d bindings for webview",
+	"description": "D bindings for webview",
 	"license": "MIT",
 
 	"preBuildCommands-linux": ["g++ -c libs/webview/webview.cc -std=c++11 -DWEBVIEW_STATIC `pkg-config --cflags gtk+-3.0 webkit2gtk-4.0` -o webview-linux.o"],
