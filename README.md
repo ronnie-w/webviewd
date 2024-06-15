@@ -1,4 +1,4 @@
-# dwebview - D bindings for webview
+# webviewd - D bindings for webview
 
 ## Usage
 ```dlang
