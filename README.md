@@ -14,6 +14,8 @@ void main()
 }
 ```
 
+#### MinGW is required for Windows
+
 ## Reference
 [webview](https://github.com/webview/webview) - A tiny cross-platform webview library for C/C++ to build modern cross-platform GUIs.
 
