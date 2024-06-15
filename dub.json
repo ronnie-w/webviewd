@@ -1,0 +1,21 @@
+{
+	"name": "webviewd",
+	"authors": [
+		"ronnie"
+	],
+	"copyright": "Copyright © 2024, ronnie",
+	"description": "d bindings for webview",
+	"license": "MIT",
+
+	"preBuildCommands-linux": ["g++ -c libs/webview/webview.cc -std=c++11 -DWEBVIEW_STATIC `pkg-config --cflags gtk+-3.0 webkit2gtk-4.0` -o webview-linux.o"],
+	"preBuildCommands-osx": ["g++ -c libs/webview/webview.cc -std=c++11 -DWEBVIEW_STATIC -o webview-osx.o"],
+	"preBuildCommands-windows": ["g++ -c libs/webview/webview.cc -std=c++14 -DWEBVIEW_STATIC -Ilibs/webview2/build/native/include -o webview.obj"],
+
+	"sourceFiles-linux": ["webview-linux.o"],
+	"libs-linux": ["gtk+-3.0", "webkit2gtk-4.0", "stdc++"],
+
+	"sourceFiles-osx": ["webview-osx.o"],
+	"libs-osx": ["WebKit"],
+
+	"sourceFiles-windows": ["webview.obj"]
+}
