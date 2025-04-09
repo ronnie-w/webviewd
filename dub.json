@@ -7,17 +7,17 @@
 	"description": "D bindings for webview",
 	"license": "MIT",
 
-	"preBuildCommands-linux": ["g++ -c libs/webview/webview.cc -std=c++11 -DWEBVIEW_STATIC `pkg-config --cflags gtk+-3.0 webkit2gtk-4.0` -o webview-linux.o"],
+	"preBuildCommands-linux": ["g++ -c libs/webview/webview.cc -std=c++11 -DWEBVIEW_STATIC `pkg-config --cflags gtk+-3.0 webkit2gtk-4.1` -o webview-linux.o"],
 	"preBuildCommands-osx": ["g++ -c libs/webview/webview.cc -std=c++11 -DWEBVIEW_STATIC -o webview-osx.o"],
 	"preBuildCommands-windows": [
-		"cl /c /W4 /utf-8 /EHsc /std:c++14 /I libs/webview2/build/native/include /DWEBVIEW_STATIC libs/webview/webview.cc /Fowebview.obj /W4"
+		"g++ -c libs/webview/webview.cc --std=c++14 -Ilibs/webview2 -DWEBVIEW_STATIC -mwindows -static-libgcc -static-libstdc++ -o webview.o"
 	],
 
 	"sourceFiles-linux": ["webview-linux.o"],
-	"libs-linux": ["gtk+-3.0", "webkit2gtk-4.0", "stdc++"],
+	"libs-linux": ["gtk+-3.0", "webkit2gtk-4.1", "stdc++"],
 
 	"sourceFiles-osx": ["webview-osx.o"],
 	"libs-osx": ["WebKit"],
 
-	"sourceFiles-windows": ["webview.obj"]
+	"sourceFiles-windows": ["webview.o"]
 }
