@@ -10,7 +10,8 @@
 	"preBuildCommands-linux": ["g++ -c libs/webview/webview.cc -std=c++11 -DWEBVIEW_STATIC `pkg-config --cflags gtk+-3.0 webkit2gtk-4.1` -o webview-linux.o"],
 	"preBuildCommands-osx": ["g++ -c libs/webview/webview.cc -std=c++11 -DWEBVIEW_STATIC -o webview-osx.o"],
 	"preBuildCommands-windows": [
-		"cl /c /EHsc /std:c++14 /Ilibs/webview2 /DWEBVIEW_STATIC /Fe:webview.obj libs/webview/webview.cc"
+		"g++ -c libs/webview/webview.cc -std=c++14 -Ilibs/webview2 -static-libstdc++ -static-libgcc -DWEBVIEW_STATIC -o webview.o",
+		"ar r webview.lib webview.o"
 	],
 
 	"sourceFiles-linux": ["webview-linux.o"],
