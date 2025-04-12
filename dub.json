@@ -20,5 +20,5 @@
 	"sourceFiles-osx": ["webview-osx.o"],
 	"libs-osx": ["WebKit"],
 
-	"sourceFiles-windows": ["webview.obj"]
+	"sourceFiles-windows": ["webview.lib"]
 }
